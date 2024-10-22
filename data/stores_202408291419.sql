@@ -1,0 +1,3 @@
+INSERT INTO stores (name,images,phone_number,address,detail,like_counts,user_id,created_at) VALUES
+	 ('화설','https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA4MjBfMjY5%2FMDAxNjkyNTI4ODEwNDQ1.jICnXp3vNI4pPJrSj67uKQ0L2gZuNK1-RzBkUR5oh-Ag.nz_Wds1Xy-SBkKemGRsvq8hEzXqpl8QpM2q1HadYU8wg.JPEG.moongchi0706%2FIMG_0833.jpg&type=a340','010-1233-5654','서울시 강남구','소고기 맛집입니다',100,NULL,'2024-07-13 15:47:29'),
+	 ('오스카','https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjAxMTdfMjUw%2FMDAxNjQyNDI1MTQ5Mjg4.GF3Q05PzmMKZgYzIXp_czvs7gM0885ebIZxu1v45PSwg.wHXNlzk7BIfYT2NP8IESqq-BkOAbWs8X8IiBifBr7jQg.JPEG.4th0fjuly%2FR0036205.JPG&type=a340','010-3333-3333','서울시 삼성동','피자 맛집이에용',150,NULL,'2024-07-13 16:09:53');
