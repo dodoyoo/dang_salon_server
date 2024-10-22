@@ -1,6 +1,12 @@
 # Created by https://www.toptal.com/developers/gitignore/api/vim,macos,node,linux,visualstudiocode,dotenv,webstorm,windows,zsh
 # Edit at https://www.toptal.com/developers/gitignore?templates=vim,macos,node,linux,visualstudiocode,dotenv,webstorm,windows,zsh
 
+### node_modules ###
+node_modules
+
+### logs ###
+logs
+
 ### dotenv ###
 .env
 
