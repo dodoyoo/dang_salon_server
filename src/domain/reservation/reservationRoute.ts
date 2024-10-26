@@ -1,11 +1,20 @@
 import { Router } from 'express';
 import { ReservationController } from './reservationController';
 import { authMiddleware } from '../../utils/jwtAuth';
+import { reservationRepository } from './reservationRepository';
+import { StoreTimeSlotRepository } from '../storeTimeSlot/storeTimeSlotRepository';
 
 const router = Router();
-const reservationController = new ReservationController();
+const storeTimeSlotRepository = new StoreTimeSlotRepository();
+const reservation_repository = new reservationRepository();
+const reservationController = new ReservationController(
+  reservation_repository,
+  storeTimeSlotRepository
+);
 
-router.post('/api/reservations', authMiddleware, (req, res) => reservationController.createReservations(req, res));
+router.post('/api/reservations', authMiddleware, (req, res) =>
+  reservationController.createReservations(req, res)
+);
 /**
  * @swagger
  *  /api/reservations:
@@ -126,7 +135,7 @@ router.post('/api/reservations', authMiddleware, (req, res) => reservationContro
 
 // 예약 취소 & Swagger
 router.delete('/api/reservations/:reservationId', authMiddleware, (req, res) =>
-    reservationController.deleteReservations(req, res),
+  reservationController.deleteReservations(req, res)
 );
 /**
  * @swagger
@@ -177,7 +186,7 @@ router.delete('/api/reservations/:reservationId', authMiddleware, (req, res) =>
  */
 
 router.get('/api/stores/:storeId/reservations', authMiddleware, (req, res) =>
-    reservationController.getReservations(req, res),
+  reservationController.getReservations(req, res)
 );
 /**
  * @swagger

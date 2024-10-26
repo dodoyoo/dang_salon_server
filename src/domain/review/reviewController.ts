@@ -44,7 +44,6 @@ export class ReviewController {
           image_type: image.mimetype,
         })
       );
-
       const review = await this.reviewRepository.createReview(
         reviewData,
         queryRunner
