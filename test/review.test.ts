@@ -4,7 +4,6 @@ import { reviewRepository } from '../src/domain/review/reviewRepository';
 import { ReviewImageRepository } from '../src/domain/review/reviewImageRepository';
 import { AppDataSource } from '../src/models/dataSource';
 import { Review } from '../src/domain/review/reviewEntity';
-import { NotFoundDataError } from '../src/utils/customError';
 
 jest.mock('../src/domain/review/reviewRepository');
 jest.mock('../src/domain/review/reviewImageRepository');
@@ -90,8 +89,6 @@ describe('ReviewController', () => {
       mockReviewImageRepository
     );
   });
-
-  // 기존의 createReview 테스트는 유지...
 
   describe('findAllReviews', () => {
     it('should return all reviews successfully', async () => {
