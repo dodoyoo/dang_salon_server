@@ -1,12 +1,21 @@
 import { Router } from 'express';
 import { ReviewController } from './reviewController';
+import { reviewRepository } from './reviewRepository';
 import upload from '../../utils/upload';
+import { ReviewImageRepository } from './reviewImageRepository';
 
 const router = Router();
-const reviewController = new ReviewController();
+const review_repository = new reviewRepository();
+const reviewImageRepository = new ReviewImageRepository();
+const reviewController = new ReviewController(
+  review_repository,
+  reviewImageRepository
+);
 
-router.post('/api/stores/:storeId/reviews', upload.array('images'), (req, res) =>
-    reviewController.createReviews(req, res),
+router.post(
+  '/api/stores/:storeId/reviews',
+  upload.array('images'),
+  (req, res) => reviewController.createReviews(req, res)
 );
 /**
  * @swagger
@@ -89,7 +98,9 @@ router.post('/api/stores/:storeId/reviews', upload.array('images'), (req, res) =
  *                    example: "가게을 찾을 수 없습니다."
  */
 
-router.get('/api/reviews', (req, res) => reviewController.findAllReviews(req, res));
+router.get('/api/reviews', (req, res) =>
+  reviewController.findAllReviews(req, res)
+);
 
 /**
  * @swagger
@@ -144,7 +155,9 @@ router.get('/api/reviews', (req, res) => reviewController.findAllReviews(req, re
  *                    example: "서버 오류가 발생했습니다."
  */
 
-router.put('/api/reviews/:storeId/:reviewId', (req, res) => reviewController.updateReview(req, res));
+router.put('/api/reviews/:storeId/:reviewId', (req, res) =>
+  reviewController.updateReview(req, res)
+);
 
 /**
  * @swagger
@@ -236,7 +249,9 @@ router.put('/api/reviews/:storeId/:reviewId', (req, res) => reviewController.upd
  *                    example: "권한이 없습니다."
  */
 
-router.delete('/api/reviews/:storeId/:reviewId', (req, res) => reviewController.deleteReview(req, res));
+router.delete('/api/reviews/:storeId/:reviewId', (req, res) =>
+  reviewController.deleteReview(req, res)
+);
 
 /**
  * @swagger

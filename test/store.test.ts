@@ -6,7 +6,6 @@ import { StoreTimeSlotRepository } from '../src/domain/storeTimeSlot/storeTimeSl
 import { StoreImageRepository } from '../src/domain/store/storeImageRepository';
 import { AppDataSource } from '../src/models/dataSource';
 
-// 모든 repository들과 AppDataSource를 mock
 jest.mock('../src/domain/store/storeRepository');
 jest.mock('../src/domain/user/userRepository');
 jest.mock('../src/domain/store/storeImageRepository');
