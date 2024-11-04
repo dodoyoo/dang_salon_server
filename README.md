@@ -25,6 +25,20 @@
 > 24.08.01 ~ 24.10.31 (8주) \
 > 백엔드 1명 프론트 1명
 
-> ### [배포링크 (Swagger API Test 가능)] (https://dangsalon.com/api-docs) 👈 클릭
->
-> 
+> ### [배포링크 (Swagger API Test 가능)] (https://dangsalon.com/api-docs) 👈 클릭 
+
+## 팀원
+
+<div align="center">
+<table align="center">
+  <tr>
+   <th >
+     Backend 김도윤
+   </th>
+   <th>
+     Frontend 김무성
+   </th> 
+  </tr>
+  <tr>
+    
+  </tr>
