@@ -40,5 +40,24 @@
    </th> 
   </tr>
   <tr>
-    
+    <td align="center">
+        <img src="https://github.com/dodoyoo/dang_salon_server/blob/main/readme.jpeg" width=200px alt="do">
+      <br/>
+    </td>
+    <td align="center">
+    </td>
+      <br/>
   </tr>
+  <tr>
+    <td align="center" class="doyoon">
+        <a href="https://github.com/dodoyoo"><img alt="github-link" height="25" src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=GitHub&logoColor=white"/></a>
+        <br/>
+        <a href="https://ehdrn822.tistory.com/"><img alt="blog-link" height="25" src="http://img.shields.io/badge/Tistory-FF7900?style=flat-square&logo=Tistory&logoColor=white"/></a>
+    </td>
+  </tr>
+
+  </table>
+  </div>
+
+  # ERD 구조
+  
