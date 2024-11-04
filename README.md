@@ -25,7 +25,7 @@
 > 24.08.01 ~ 24.10.31 (8주) \
 > 백엔드 1명 프론트 1명
 
-> ### [배포링크 (Swagger API Test 가능)] (https://dangsalon.com/api-docs) 👈 클릭 
+> ### [배포 링크 (Swagger API Test 가능)](https://dangsalon.com/api-docs) 👈🏻 클릭 
 
 ## 팀원
 
@@ -41,7 +41,7 @@
   </tr>
   <tr>
     <td align="center">
-        <img src="https://github.com/dodoyoo/dang_salon_server/blob/main/readme.jpeg" width=200px alt="do">
+        <img src="https://github.com/user-attachments/assets/bc0c8c13-b37e-499a-acb5-1a7fc782d7c0" width=200px alt="do">
       <br/>
     </td>
     <td align="center">
@@ -60,4 +60,7 @@
   </div>
 
   # ERD 구조
+
+  [👉🏻 ERD 직접 보기](https://dbdiagram.io/d/%EB%8C%95%EC%82%B4%EB%A1%B1-667a5a2d9939893dae2b90d6)
   
+  <img src="https://github.com/user-attachments/assets/d649ce80-9a78-40e7-9ff7-775bef00f239">
