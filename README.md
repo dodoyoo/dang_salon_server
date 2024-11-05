@@ -77,7 +77,7 @@
 
 ### 요약
 
-<table align="left" width="350px" class="공통">
+<table align="center">
   <tr>
     <th>
       공통
@@ -88,4 +88,25 @@
     <th>
       관리자
     </th>
+  </tr>
+  <tr>
+    <td align="left" width="350px" class="공통">
+      - 회원가입, 로그인
+      <br/>
+      - 예약 조회
+    </td>
+    <td align="left" width="350px" class="사용자">
+      - 예약하기
+      <br/>
+      - 리뷰 작성
+      <br/>
+      - 댓글 작성
+      <br/>
+    </td>
+    <td align="left" width="350px" class="관리자">
+      - 매장 등록
+      <br/>
+      - 예약 관리
+      <br/>
+    </td>
   </tr>
