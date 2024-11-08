@@ -159,3 +159,20 @@
 
 
   # [API 명세]
+| Domain      | URL                                                                        | Http Method                 | description       | 접근 권한 |
+|:------------|:---------------------------------------------------------------------------|:----------------------------|:------------------|:------|
+| **Auth**    | /api/sign-up                                                                    | `POST`                      | 사용자 회원가입          | -     |
+|             | /api/sign-in                                                                    | `POST`                      | 사용자/관리자 로그인       | -     |
+|             | /api/users/{userId}                                                        | `GET`                       | 사용자 마이페이지 조회    |  USER  |  
+|             | /api/verify                                                                | `GET`                       | 이메일 인증            |  -     |
+|             | /api/stores                                                                | `POST`                      | 가게 등록              |  ADMIN  |
+| **Store**   | /api/stores                                                                | `GET`                       | 모든 가게 조회          | -      |
+|             | /ap/stores/{id}                                                            | `GET`                       | 가게 정보 조회          |  USER  |
+|             | /api/stoers/{id}/time-slots                                                | `GET`                       | 가게 시간 정보 조회      |  USER  |
+| **Review**  | /api/reviews                                                               | `GET`                       | 모든 리뷰 조회          |  -  |
+|             | /api/stores/{storeId}/reviews                                              | `POST`                      | 리뷰 작성              |  USER  |
+|             | /api/reviews/{storeId}/{reviewId}                                          | `PATCH`                     | 리뷰 수정              |  USER  |
+|             | /api/reviews/{storeId}/{reviewId}                                          | `DELETE`                    | 리뷰 삭제              |  USER  |
+| **Reservation** | /api/reservations                                                      | `POST`                      | 예약 생상              |  USER  |
+|                 | /api/reservations/{reservationId}                                      | `DELETE`                    | 예약 취소              |  USER & ADMIN  |
+|                 | /api/stores/{storeId}/reservations                                     | `GET`                       | 예약 조회              |  ADMIN  |
