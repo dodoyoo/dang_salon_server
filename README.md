@@ -44,14 +44,18 @@
       <br/>
     </td>
     <td align="center">
-    </td>
+        <img src="https://github.com/user-attachments/assets/34eb1b3c-df28-486c-a561-dd9c1680fc68" width=200px alt="moo">
       <br/>
+    </td>
   </tr>
   <tr>
     <td align="center" class="doyoon">
         <a href="https://github.com/dodoyoo"><img alt="github-link" height="25" src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=GitHub&logoColor=white"/></a>
         <br/>
         <a href="https://ehdrn822.tistory.com/"><img alt="blog-link" height="25" src="http://img.shields.io/badge/Tistory-FF7900?style=flat-square&logo=Tistory&logoColor=white"/></a>
+    </td>
+    <td align="center" class="moosung">
+        -
     </td>
   </tr>
 
