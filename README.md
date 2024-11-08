@@ -176,3 +176,33 @@
 | **Reservation** | /api/reservations                                                      | `POST`                      | 예약 생상              |  USER  |
 |                 | /api/reservations/{reservationId}                                      | `DELETE`                    | 예약 취소              |  USER & ADMIN  |
 |                 | /api/stores/{storeId}/reservations                                     | `GET`                       | 예약 조회              |  ADMIN  |
+
+
+# 형상 관리
+<table align="center">
+  <tr>
+    <th>
+      [Notion]
+      <br/>
+      기능요구 정의서, 프로젝트 회의, 우리의 마인드
+      <br/>
+      프로젝트 진행에 필요한 전반적인 사항 기록
+    </th>
+    <th>
+      [Task board]
+      <br/>
+      개발을 진행하며 Sprint 단위로
+      <br/>
+      담당자, 진행 상황, 에러 사항 기록
+    </th>
+  </tr>
+  <tr>
+    <td align="left" width="350px" class="Notion">
+      <img src="https://github.com/user-attachments/assets/41ae3253-c754-4676-94a5-918669a8ca30">
+      <img src="https://github.com/user-attachments/assets/7c3b9478-8284-41ab-be17-08c99a38b313">
+      <img src="https://github.com/user-attachments/assets/1f34f21e-1feb-4206-a143-ba50f780e154">
+    </td>
+    <td align="left" width="350px" class"Taskboard">
+      <img src="https://github.com/user-attachments/assets/e2679160-8fad-4636-944c-a21666e4ab8e">
+  </tr>
+</table>
