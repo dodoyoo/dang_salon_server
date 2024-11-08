@@ -206,3 +206,22 @@
       <img src="https://github.com/user-attachments/assets/e2679160-8fad-4636-944c-a21666e4ab8e">
   </tr>
 </table>
+
+
+
+# 팀 문화
+1. 매일 진행하는 Daliy Meeting
+  - 자신의 진행상황에 대해서 이야기합니다.
+  - 논의 사항이 있다면 Notion에 질문 항목에 기록하거나 Slack으로 연락합니다.
+  - 미팅을 할 때 상호 존중을 위하여 OO님을 사용합니다.
+
+2. Sprint Meeting
+  - 한 주 동안 자신의 계획을 얼마나 이행했는지 이야기합니다.
+  - 다음 한 주 동안은 어떠한 작업을 할지 이야기합니다.
+
+3. 개발 시간
+  - 매일 오후 1 ~ 7시 필수, 주말 하루는 자유입니다.
+  - 매일 오프라인으로 만나서 개발을 진행합니다.
+
+4. Pull Request
+  - Full stack의 팀원의 Approve를 받아야 PR을 Merge 합니다.
