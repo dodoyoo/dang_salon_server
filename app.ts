@@ -17,7 +17,7 @@ export const createApp = () => {
 
   app.use(
     cors({
-      origin: 'https://www.dangsalon.com',
+      origin: '*',
     })
   );
   app.use(morgan('combined'));
