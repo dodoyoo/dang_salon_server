@@ -5,6 +5,11 @@ import { createApp } from './app';
 import swaggerJSDoc from 'swagger-jsdoc';
 import swaggerUi from 'swagger-ui-express';
 import { customLogger } from './logger';
+<<<<<<< HEAD
+=======
+import { loggers } from 'winston';
+import { error } from 'console';
+>>>>>>> c385507 (FIX: html & server.ts)
 const app = createApp();
 const port = process.env.PORT || 4000;
 const HOST = process.env.HOST;
@@ -23,7 +28,15 @@ const swaggerDefinition = {
     description:
       'A simple CRUD API application made with Express and documented with Swagger',
   },
+<<<<<<< HEAD
   servers: [{ url: `http://${HOST}:${port}` }],
+=======
+  servers: [
+    {
+      url: `http://${HOST}:${port}`,
+    },
+  ],
+>>>>>>> c385507 (FIX: html & server.ts)
   basePath: '/',
   components: {
     securitySchemes: {
