@@ -13,7 +13,6 @@ import commentRouter from './src/domain/comment/commentRoute';
 import favicon from 'serve-favicon';
 
 export const createApp = () => {
-
   const fs = require('fs');
   const app = express();
 
@@ -41,7 +40,7 @@ export const createApp = () => {
 
   app.get('/main', function (rea: Request, res: Response) {
     res.sendFile(path.join(__dirname, '/js/index.html'));
-
+  });
   // app.get('/', (req: Request, res: Response) => {
   //     res.send(`
   //         <h1>Log in<h1>
