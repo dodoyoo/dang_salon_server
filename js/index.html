@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>댕살롱 - 애견미용 예약 서비스</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <header class="header">
+        <div class="header-content">
+          <h1 class="logo">댕살롱</h1>
+          <div class="auth-buttons">
+            <button class="btn btn-text">로그인</button>
+            <button class="btn btn-text">회원가입</button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Search Section -->
+      <div class="search-section">
+        <div class="search-container">
+          <div class="search-input-container">
+            <input
+              type="text"
+              placeholder="원하시는 애견미용실을 검색해보세요"
+              class="search-input"
+            />
+            <i class="search-icon" data-lucide="search"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filters -->
+      <div class="filters-section">
+        <div class="filters-container">
+          <button class="filter-btn filter-btn-active">전체보기</button>
+          <button class="filter-btn">리뷰순</button>
+          <button class="filter-btn">거리순</button>
+        </div>
+      </div>
+
+      <!-- Store List -->
+      <div class="store-list-section">
+        <div class="store-grid">
+          <!-- Store Card -->
+          <div class="store-card">
+            <img
+              src="images/placeholder.jpg"
+              alt="애견 미용실"
+              class="store-image"
+            />
+            <div class="store-info">
+              <h3 class="store-name">멍멍이 살롱</h3>
+              <div class="store-rating">
+                <i data-lucide="star" class="rating-icon"></i>
+                <span>4.8 (123)</span>
+              </div>
+              <div class="store-location">
+                <i data-lucide="map-pin" class="location-icon"></i>
+                <span>서울시 강남구</span>
+              </div>
+              <div class="store-hours">
+                <i data-lucide="clock" class="hours-icon"></i>
+                <span>10:00 - 20:00</span>
+              </div>
+              <div class="store-price">
+                <span class="price-label">소형견 기준</span>
+                <span class="price-value">50,000원~</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Store Card -->
+          <div class="store-card">
+            <img
+              src="images/placeholder.jpg"
+              alt="애견 미용실"
+              class="store-image"
+            />
+            <div class="store-info">
+              <h3 class="store-name">댕댕이 뷰티샵</h3>
+              <div class="store-rating">
+                <i data-lucide="star" class="rating-icon"></i>
+                <span>4.7 (98)</span>
+              </div>
+              <div class="store-location">
+                <i data-lucide="map-pin" class="location-icon"></i>
+                <span>서울시 서초구</span>
+              </div>
+              <div class="store-hours">
+                <i data-lucide="clock" class="hours-icon"></i>
+                <span>09:00 - 19:00</span>
+              </div>
+              <div class="store-price">
+                <span class="price-label">소형견 기준</span>
+                <span class="price-value">45,000원~</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Store Card -->
+          <div class="store-card">
+            <img
+              src="images/placeholder.jpg"
+              alt="애견 미용실"
+              class="store-image"
+            />
+            <div class="store-info">
+              <h3 class="store-name">프리미엄 펫 그루밍</h3>
+              <div class="store-rating">
+                <i data-lucide="star" class="rating-icon"></i>
+                <span>4.9 (205)</span>
+              </div>
+              <div class="store-location">
+                <i data-lucide="map-pin" class="location-icon"></i>
+                <span>서울시 마포구</span>
+              </div>
+              <div class="store-hours">
+                <i data-lucide="clock" class="hours-icon"></i>
+                <span>10:30 - 21:00</span>
+              </div>
+              <div class="store-price">
+                <span class="price-label">소형견 기준</span>
+                <span class="price-value">60,000원~</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Store Card -->
+          <div class="store-card">
+            <img
+              src="images/placeholder.jpg"
+              alt="애견 미용실"
+              class="store-image"
+            />
+            <div class="store-info">
+              <h3 class="store-name">왈왈 미용실</h3>
+              <div class="store-rating">
+                <i data-lucide="star" class="rating-icon"></i>
+                <span>4.6 (87)</span>
+              </div>
+              <div class="store-location">
+                <i data-lucide="map-pin" class="location-icon"></i>
+                <span>서울시 송파구</span>
+              </div>
+              <div class="store-hours">
+                <i data-lucide="clock" class="hours-icon"></i>
+                <span>10:00 - 19:00</span>
+              </div>
+              <div class="store-price">
+                <span class="price-label">소형견 기준</span>
+                <span class="price-value">48,000원~</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Store Card -->
+          <div class="store-card">
+            <img
+              src="images/placeholder.jpg"
+              alt="애견 미용실"
+              class="store-image"
+            />
+            <div class="store-info">
+              <h3 class="store-name">펫 스타일러</h3>
+              <div class="store-rating">
+                <i data-lucide="star" class="rating-icon"></i>
+                <span>4.5 (76)</span>
+              </div>
+              <div class="store-location">
+                <i data-lucide="map-pin" class="location-icon"></i>
+                <span>서울시 강동구</span>
+              </div>
+              <div class="store-hours">
+                <i data-lucide="clock" class="hours-icon"></i>
+                <span>09:30 - 19:30</span>
+              </div>
+              <div class="store-price">
+                <span class="price-label">소형견 기준</span>
+                <span class="price-value">55,000원~</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Store Card -->
+          <div class="store-card">
+            <img
+              src="images/placeholder.jpg"
+              alt="애견 미용실"
+              class="store-image"
+            />
+            <div class="store-info">
+              <h3 class="store-name">강아지 뷰티하우스</h3>
+              <div class="store-rating">
+                <i data-lucide="star" class="rating-icon"></i>
+                <span>4.7 (112)</span>
+              </div>
+              <div class="store-location">
+                <i data-lucide="map-pin" class="location-icon"></i>
+                <span>서울시 용산구</span>
+              </div>
+              <div class="store-hours">
+                <i data-lucide="clock" class="hours-icon"></i>
+                <span>11:00 - 20:00</span>
+              </div>
+              <div class="store-price">
+                <span class="price-label">소형견 기준</span>
+                <span class="price-value">52,000원~</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Navigation -->
+      <nav class="bottom-navigation">
+        <div class="nav-container">
+          <button class="nav-item nav-item-active">
+            <i data-lucide="search" class="nav-icon"></i>
+            <span class="nav-text">검색</span>
+          </button>
+          <button class="nav-item">
+            <i data-lucide="star" class="nav-icon"></i>
+            <span class="nav-text">찜</span>
+          </button>
+          <button class="nav-item">
+            <i data-lucide="clock" class="nav-icon"></i>
+            <span class="nav-text">예약</span>
+          </button>
+          <button class="nav-item">
+            <i data-lucide="map-pin" class="nav-icon"></i>
+            <span class="nav-text">내주변</span>
+          </button>
+        </div>
+      </nav>
+    </div>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
