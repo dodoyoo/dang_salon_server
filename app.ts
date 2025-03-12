@@ -4,13 +4,13 @@ import express, { Request, Response, NextFunction } from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
 import compression from 'compression';
-import favicon from 'serve-favicon';
 import path from 'path';
 import userRouter from './src/domain/user/userRoute';
 import storeRouter from './src/domain/store/storeRoute';
 import reservationRouter from './src/domain/reservation/reservationRoute';
 import reviewRouter from './src/domain/review/reviewRoute';
 import commentRouter from './src/domain/comment/commentRoute';
+import favicon from 'serve-favicon';
 
 export const createApp = () => {
   const fs = require('fs');
@@ -25,6 +25,9 @@ export const createApp = () => {
   app.use(morgan('combined'));
   app.use(compression());
   app.use(express.static(path.join(__dirname, 'public', 'index.html')));
+  app.use(express.static(path.join(__dirname, '../css')));
+  app.use(express.static(path.join(__dirname, '../js')));
+
   app.use(userRouter);
   app.use(storeRouter);
   app.use(reservationRouter);
@@ -35,16 +38,8 @@ export const createApp = () => {
     res.status(200).json({ message: 'pongggg' });
   });
 
-  app.get('/main', function (request, response) {
-    fs.readFile('./js/index.html', function (err: any, data: any) {
-      if (err) {
-        response.send('에러');
-      } else {
-        response.writeHead(200, { 'Content-Type': 'text/html' });
-        response.write(data);
-        response.end();
-      }
-    });
+  app.get('/main', function (rea: Request, res: Response) {
+    res.sendFile(path.join(__dirname, '/js/index.html'));
   });
   // app.get('/', (req: Request, res: Response) => {
   //     res.send(`
