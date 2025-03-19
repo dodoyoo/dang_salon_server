@@ -13,8 +13,6 @@ import commentRouter from './src/domain/comment/commentRoute';
 import favicon from 'serve-favicon';
 
 export const createApp = () => {
-
-  const fs = require('fs');
   const app = express();
 
   app.use(express.json());
@@ -26,8 +24,8 @@ export const createApp = () => {
   app.use(morgan('combined'));
   app.use(compression());
   app.use(express.static(path.join(__dirname, 'public', 'index.html')));
-  app.use(express.static(path.join(__dirname, '../css')));
-  app.use(express.static(path.join(__dirname, '../js')));
+  app.use(express.static(path.join(__dirname, '/css/main.css')));
+  app.use(express.static(path.join(__dirname, '/js/main.js')));
 
   app.use(userRouter);
   app.use(storeRouter);
@@ -39,9 +37,9 @@ export const createApp = () => {
     res.status(200).json({ message: 'pongggg' });
   });
 
-  app.get('/main', function (rea: Request, res: Response) {
-    res.sendFile(path.join(__dirname, '/js/index.html'));
-
+  app.get('/main', function (req: Request, res: Response) {
+    res.sendFile(path.join(__dirname, '/index.html'));
+  });
   // app.get('/', (req: Request, res: Response) => {
   //     res.send(`
   //         <h1>Log in<h1>
