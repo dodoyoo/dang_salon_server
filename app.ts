@@ -13,6 +13,7 @@ import commentRouter from './src/domain/comment/commentRoute';
 import favicon from 'serve-favicon';
 
 export const createApp = () => {
+  const fs = require('fs');
   const app = express();
 
   app.use(express.json());
@@ -23,9 +24,14 @@ export const createApp = () => {
   );
   app.use(morgan('combined'));
   app.use(compression());
-  app.use(express.static(path.join(__dirname, 'public', 'index.html')));
-  app.use(express.static(path.join(__dirname, '/css/main.css')));
-  app.use(express.static(path.join(__dirname, '/js/main.js')));
+  app.use(
+    express.static(path.join(__dirname, 'public', './static/js/main.html'))
+  );
+  app.use('/css', express.static('./static/css'));
+  app.use('/js', express.static('./static/js'));
+
+  // app.use(express.static(path.join(__dirname, './static/css/main.css')));
+  // app.use(express.static(path.join(__dirname, './static/js/main.js')));
 
   app.use(userRouter);
   app.use(storeRouter);
@@ -37,8 +43,16 @@ export const createApp = () => {
     res.status(200).json({ message: 'pongggg' });
   });
 
-  app.get('/main', function (req: Request, res: Response) {
-    res.sendFile(path.join(__dirname, '/index.html'));
+  app.get('/main', function (request, response) {
+    fs.readFile('./static/js/main.html', function (err: any, data: any) {
+      if (err) {
+        response.send('에러');
+      } else {
+        response.writeHead(200, { 'Content-Type': 'text/html' });
+        response.write(data);
+        response.end();
+      }
+    });
   });
   // app.get('/', (req: Request, res: Response) => {
   //     res.send(`
