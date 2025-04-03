@@ -39,21 +39,25 @@ export const createApp = () => {
   app.use(reviewRouter);
   app.use(commentRouter);
 
+  app.get('/main', (req, res) => {
+    res.sendFile(path.join(__dirname, './static/js', 'main.html'));
+  });
+
   app.get('/ping', (req: Request, res: Response) => {
     res.status(200).json({ message: 'pongggg' });
   });
 
-  app.get('/main', function (request, response) {
-    fs.readFile('./static/js/main.html', function (err: any, data: any) {
-      if (err) {
-        response.send('에러');
-      } else {
-        response.writeHead(200, { 'Content-Type': 'text/html' });
-        response.write(data);
-        response.end();
-      }
-    });
-  });
+  // app.get('/main', function (request, response) {
+  //   fs.readFile('./static/js/main.html', function (err: any, data: any) {
+  //     if (err) {
+  //       response.send('에러');
+  //     } else {
+  //       response.writeHead(200, { 'Content-Type': 'text/html' });
+  //       response.write(data);
+  //       response.end();
+  //     }
+  //   });
+  // });
   // app.get('/', (req: Request, res: Response) => {
   //     res.send(`
   //         <h1>Log in<h1>
