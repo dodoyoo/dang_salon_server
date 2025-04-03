@@ -25,7 +25,7 @@
           <div class="search-input-container">
             <input
               type="text"
-              placeholder="원하시는 애견미용실을 검색해보세요"
+              placeholders="원하시는 애견미용실을 검색해보세요"
               class="search-input"
             />
             <i class="search-icon" data-lucide="search"></i>
@@ -44,8 +44,8 @@
 
       <!-- Store List -->
       <div class="store-list-section">
-        <div class="store-grid" id="storeGrid">
-          <!-- Stores will be loaded dynamically here -->
+        <div class="store-grid">
+          <!-- Store Card -->
         </div>
       </div>
 
@@ -72,53 +72,6 @@
       </nav>
     </div>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', async () => {
-        const storeGrid = document.getElementById('storeGrid');
-        try {
-          const response = await fetch('https://52.78.136.144:4000');
-          const data = await response.json();
-
-          data.stores.forEach((store) => {
-            const imageUrl =
-              store.images ||
-              (store.store_images.length > 0
-                ? store.store_images[0].image_url
-                : 'images/placeholder.jpg');
-            const storeCard = `
-              <div class="store-card">
-                <img src="${imageUrl}" alt="${
-              store.name
-            }" class="store-image" />
-                <div class="store-info">
-                  <h3 class="store-name">${store.name}</h3>
-                  <div class="store-location">
-                    <i data-lucide="map-pin" class="location-icon"></i>
-                    <span>${store.address}</span>
-                  </div>
-                  <div class="store-hours">
-                    <i data-lucide="clock" class="hours-icon"></i>
-                    <span>${
-                      store.open_time
-                        ? store.open_time.substring(0, 5)
-                        : '--:--'
-                    } - ${
-              store.close_time ? store.close_time.substring(0, 5) : '--:--'
-            }</span>
-                  </div>
-                  <div class="store-price">
-                    <span class="price-label">기본 요금</span>
-                    <span class="price-value">${store.detail}</span>
-                  </div>
-                </div>
-              </div>
-            `;
-            storeGrid.innerHTML += storeCard;
-          });
-        } catch (error) {
-          console.error('가게 정보를 불러오는 중 오류 발생:', error);
-        }
-      });
-    </script>
+    <script src="js/main.js"></script>
   </body>
 </html>
