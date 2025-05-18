@@ -1,0 +1,74 @@
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>댕살롱 - 회원가입</title>
+    <link rel="stylesheet" href="/css/signUp.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <header class="header">
+        <h1 class="logo">댕살롱 회원가입</h1>
+      </header>
+
+      <!-- Sign Up Form -->
+      <main class="signup-form-section">
+        <form class="signup-form">
+          <div class="form-group">
+            <label for="name">이름</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="이름을 입력하세요"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email">이메일</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="이메일을 입력하세요"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="password">비밀번호</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="비밀번호를 입력하세요"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="confirm-password">비밀번호 확인</label>
+            <input
+              type="password"
+              id="confirm-password"
+              name="confirm-password"
+              placeholder="비밀번호를 다시 입력하세요"
+              required
+            />
+          </div>
+
+          <div class="form-group checkbox-group">
+            <input type="checkbox" id="agree" required />
+            <label for="agree">이용약관 및 개인정보 수집에 동의합니다</label>
+          </div>
+
+          <button type="submit" class="btn btn-primary">회원가입</button>
+        </form>
+      </main>
+    </div>
+
+    <script src="/js/signUp.js"></script>
+  </body>
+</html>

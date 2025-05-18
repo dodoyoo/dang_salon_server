@@ -43,6 +43,10 @@ export const createApp = () => {
     res.sendFile(path.join(__dirname, './static/js', 'main.html'));
   });
 
+  app.get('/sign-up', (req, res) => {
+    res.sendFile(path.join(__dirname, './static/js', 'signUp.html'));
+  });
+
   app.get('/ping', (req: Request, res: Response) => {
     res.status(200).json({ message: 'pongggg' });
   });
