@@ -1,0 +1,33 @@
+POST http://localhost:4000/api/sign-up HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "test@example.com",
+    "password": "testpass123!",
+    "nickname": "dang"
+}
+
+
+###
+POST http://localhost:4000/api/sign-in HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "test@example.com",
+    "password": "testpass123!"
+}
+
+###
+HTTP/1.1/api/users/1 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIwLCJlbWFpbCI6ImFzaGVyX2t1dUBuYXZlci5jb20iLCJpYXQiOjE3MzAxNzEwNjcsImV4cCI6MTczMDc3NTg2N30.r6T_vppxO-HqBcQBP9Aox-eyDRr00vu1X5vsWeV9Qqk
+
+###
+GET http://localhost:4000/api/verify HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIwLCJlbWFpbCI6ImFzaGVyX2t1dUBuYXZlci5jb20iLCJpYXQiOjE3MzAxNzEwNjcsImV4cCI6MTczMDc3NTg2N30.r6T_vppxO-HqBcQBP9Aox-eyDRr00vu1X5vsWeV9Qqk
+
+
+###
+GET http://localhost:4000/login/redirect HTTP/1.1
+
+###
+GET http://localhost:4000/email-verification HTTP/1.1

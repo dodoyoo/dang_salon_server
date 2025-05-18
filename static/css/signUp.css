@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Gaegu:wght@300;400;700&display=swap');
+
+/* signUp.css */
+
+/* 회원가입 컨테이너 */
+.signup-container {
+  max-width: 480px;
+  margin: 3rem auto;
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  box-shadow: var(--shadow);
+  padding: 2rem;
+}
+
+/* 제목 */
+.signup-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--logo-color);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-family: 'Gaegu', cursive;
+}
+
+/* 폼 필드 전체 */
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* 라벨 */
+.form-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--gray-700);
+  margin-bottom: 0.25rem;
+}
+
+/* 인풋 공통 */
+.form-input {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--gray-300);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-input:focus {
+  border-color: var(--primary-color-dark);
+  box-shadow: 0 0 0 2px var(--primary-color-light);
+}
+
+/* 에러 메시지 */
+.form-error {
+  font-size: 0.75rem;
+  color: #dc2626;
+  margin-top: -0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* 제출 버튼 */
+.signup-button {
+  background-color: var(--primary-color-dark);
+  color: white;
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.signup-button:hover {
+  background-color: #9d174d;
+}
+
+/* 하단 텍스트 */
+.signup-footer {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--gray-500);
+}
+
+.signup-footer a {
+  color: var(--primary-color-dark);
+  text-decoration: none;
+  margin-left: 0.25rem;
+  font-weight: 500;
+}
+
+.signup-footer a:hover {
+  text-decoration: underline;
+}
+
+/* 반응형 */
+@media (max-width: 480px) {
+  .signup-container {
+    margin: 2rem 1rem;
+    padding: 1.5rem;
+  }
+}
