@@ -65,7 +65,6 @@ function fetchStores(filterType = '전체보기', page = 1, pageSize = 20) {
     .then((data) => {
       console.log('가게 데이터 받음:', data);
 
-      // 여기가 중요합니다! data.stores로 접근해야 합니다
       let stores = data.stores;
 
       if (!stores || stores.length === 0) {
