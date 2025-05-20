@@ -24,8 +24,6 @@ document.addEventListener('DOMContentLoaded', function () {
   // 폼 제출 처리
   const form = document.getElementById('signupForm');
   form.addEventListener('submit', function (e) {
-    e.preventDefault();
-
     let isValid = true;
 
     // 아이디 검증
@@ -55,7 +53,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // 비밀번호 확인
     const confirmPassword = document.getElementById('confirmPassword').value;
+
+    console.log('@@@@password:', password);
+    console.log('@@@@confirmPassword:', confirmPassword);
+    console.log('@@@@isMatch:', password === confirmPassword);
+
     if (password !== confirmPassword) {
+      e.preventDefault();
       document.getElementById('confirmPasswordError').style.display = 'block';
       document.getElementById('confirmPassword').classList.add('input-error');
       isValid = false;
