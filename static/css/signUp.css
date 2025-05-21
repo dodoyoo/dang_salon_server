@@ -48,6 +48,9 @@ body {
 
 /* 폼 그룹 */
 .form-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   margin-bottom: 20px;
 }
 
@@ -96,23 +99,6 @@ body {
   color: #ff0000;
   font-size: 12px;
   margin-top: 4px;
-}
-
-/* 생년월일 필드 */
-.birth-wrap {
-  display: flex;
-  gap: 10px;
-}
-
-.birth-wrap .form-control {
-  flex: 1;
-  width: auto;
-}
-
-/* 휴대전화 인증 */
-.mobile-wrap {
-  display: flex;
-  gap: 10px;
 }
 
 .mobile-wrap .form-control {
@@ -209,6 +195,54 @@ body {
   border-radius: 4px;
   cursor: pointer;
   margin-top: 30px;
+  transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: #3b2c1f;
+}
+
+.email-group {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* '이메일' 라벨 스타일 */
+.email-group label {
+  min-width: 40px;
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+/* 이메일 input과 버튼을 가로로 정렬하는 wrapper */
+.email-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+/* input이 버튼보다 넓게 */
+.email-wrapper input[type='email'] {
+  width: 250px;
+  padding: 1px;
+  font-size: 16px;
+  border: 1px solid #222;
+  border-radius: 4px;
+}
+
+.btn-email {
+  display: block;
+  width: 50%;
+  padding: 5px;
+  background-color: #513d2a;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
   transition: background-color 0.2s;
 }
 
