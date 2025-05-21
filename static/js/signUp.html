@@ -15,21 +15,31 @@
 
       <!-- Sign Up Form -->
       <main class="signup-form-section">
-        <form class="signup-form">
+        <form
+          id="signupForm"
+          class="signup-form"
+          method="POST"
+          action="/api/sign-up"
+        >
           <div class="form-group">
             <label for="name">닉네임</label>
             <input type="text" id="name" name="name" placeholder="" required />
           </div>
 
-          <div class="form-group">
+          <div class="form-group email-group">
             <label for="email">이메일</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder=""
-              required
-            />
+            <div class="email-wrapper">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder=""
+                required
+              />
+              <button type="button" id="checkEmailBtn" class="btn btn-email">
+                이메일 확인
+              </button>
+            </div>
           </div>
 
           <div class="form-group">
@@ -44,14 +54,21 @@
           </div>
 
           <div class="form-group">
-            <label for="confirm-password">비밀번호 확인</label>
+            <label for="confirmPassword">비밀번호 확인</label>
             <input
               type="password"
-              id="confirm-password"
+              id="confirmPassword"
               name="confirm-password"
               placeholder=""
               required
             />
+            <p
+              id="confirmPasswordError"
+              class="error-message"
+              style="display: none"
+            >
+              비밀번호가 일치하지 않습니다.
+            </p>
           </div>
 
           <div class="form-group checkbox-group">
@@ -59,7 +76,13 @@
             <label for="agree">이용약관 및 개인정보 수집에 동의합니다</label>
           </div>
 
-          <button type="submit" class="btn btn-primary">회원가입</button>
+          <button
+            type="submit"
+            class="btn btn-primary"
+            onclick="window.location.href='/main'"
+          >
+            회원가입
+          </button>
         </form>
       </main>
     </div>
