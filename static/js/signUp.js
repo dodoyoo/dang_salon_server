@@ -23,7 +23,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // 폼 제출 처리
   const form = document.getElementById('signupForm');
-  form.addEventListener('submit', function (e) {
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
     let isValid = true;
 
     // 아이디 검증
@@ -53,10 +54,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // 비밀번호 확인
     const confirmPassword = document.getElementById('confirmPassword').value;
-
-    console.log('@@@@password:', password);
-    console.log('@@@@confirmPassword:', confirmPassword);
-    console.log('@@@@isMatch:', password === confirmPassword);
 
     if (password !== confirmPassword) {
       e.preventDefault();
@@ -95,6 +92,45 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
 
+    const emailInput = document.getElementById('email');
+    const emailCheckButton = document.getElementById('checkEmailBtn');
+
+    emailCheckButton.addEventListener('click', async function () {
+      const email = emailInput.value;
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!emailRegex.test(email)) {
+        alert('유효한 이메일을 입력해주세요.');
+        return;
+      }
+
+      try {
+        const response = await fetch('/api/signup/email-verify', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ email }),
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+          alert('인증 메일이 발송되었습니다. 메일함을 확인해주세요.');
+          localStorage.setItem('pendingEmail', email);
+
+          // 👉 이메일 input 비활성화
+          emailInput.disabled = true;
+          emailCheckButton.disabled = true;
+        } else {
+          alert(result.message || '이메일 전송 실패');
+        }
+      } catch (err) {
+        console.error(err);
+        alert('서버 오류');
+      }
+    });
+
     // 필수 약관 동의 확인
     const agreeService = document.getElementById('agreeService').checked;
     const agreePrivacy = document.getElementById('agreePrivacy').checked;
@@ -106,22 +142,35 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // 폼이 유효하면 서버로 제출
     if (isValid) {
-      alert('회원가입이 완료되었습니다!');
-      // 실제로는 여기서 서버로 데이터를 전송
-      // form.submit();
-    }
-  });
+      // 👉 서버로 실제 회원가입 요청 보내기
+      try {
+        const formData = {
+          userId: document.getElementById('userId').value,
+          password: document.getElementById('password').value,
+          name: document.getElementById('name').value,
+          email: document.getElementById('email').value,
+        };
 
-  // 인증번호 받기 버튼 클릭 처리
-  const certButton = document.querySelector('.btn-cert');
-  certButton.addEventListener('click', function () {
-    const phoneNumber = document.getElementById('phoneNumber').value;
-    if (phoneNumber.trim() === '') {
-      alert('전화번호를 입력해주세요.');
-      return;
-    }
+        const response = await fetch('/api/sign-up', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        });
 
-    alert('인증번호가 발송되었습니다.');
-    document.getElementById('certNumber').disabled = false;
+        const result = await response.json();
+
+        if (response.ok) {
+          alert('회원가입이 완료되었습니다!');
+          window.location.href = '/main'; // ✅ 여기서 이동
+        } else {
+          alert(result.message || '회원가입 실패');
+        }
+      } catch (err) {
+        console.error(err);
+        alert('서버 오류');
+      }
+    }
   });
 });
