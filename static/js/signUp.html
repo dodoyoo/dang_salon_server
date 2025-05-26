@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>댕살롱 - 회원가입</title>
+    <title>댕살롱 - 애견미용 예약 서비스</title>
     <link rel="stylesheet" href="/css/signUp.css" />
   </head>
   <body>
@@ -18,8 +18,8 @@
         <form
           id="signupForm"
           class="signup-form"
-          method="POST"
           action="/api/sign-up"
+          method="POST"
         >
           <div class="form-group">
             <label for="name">닉네임</label>
@@ -39,6 +39,9 @@
               <button type="button" id="checkEmailBtn" class="btn btn-email">
                 이메일 확인
               </button>
+              <p id="emailError" class="error-message" style="display: none">
+                유효하지 않은 이메일입니다.
+              </p>
             </div>
           </div>
 
@@ -76,13 +79,7 @@
             <label for="agree">이용약관 및 개인정보 수집에 동의합니다</label>
           </div>
 
-          <button
-            type="submit"
-            class="btn btn-primary"
-            onclick="window.location.href='/main'"
-          >
-            회원가입
-          </button>
+          <button type="submit" class="btn btn-primary">회원가입</button>
         </form>
       </main>
     </div>
