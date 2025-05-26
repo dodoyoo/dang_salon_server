@@ -146,7 +146,9 @@ router.post('/api/sign-in', (req, res) => userController.signIn(req, res));
  */
 
 // myPage Router 설정 & swagger 작성
-router.get('/api/users/:userId', authMiddleware, (req, res) => userController.getUserById(req, res));
+router.get('/api/users/:userId', authMiddleware, (req, res) =>
+  userController.getUserById(req, res)
+);
 /**
  * @swagger
  * /api/users/{userId}:
@@ -252,53 +254,59 @@ router.get('/api/users/:userId', authMiddleware, (req, res) => userController.ge
 
 // 구글 로그인 시작
 router.get('/login', (req: Request, res: Response) => {
-    let url = 'https://accounts.google.com/o/oauth2/v2/auth';
-    url += `?client_id=${GOOGLE_CLIENT_ID}`;
-    url += `&redirect_uri=${GOOGLE_REDIRECT_URL}`;
-    url += `&response_type=code`;
-    url += '&scope=email profile';
+  let url = 'https://accounts.google.com/o/oauth2/v2/auth';
+  url += `?client_id=${GOOGLE_CLIENT_ID}`;
+  url += `&redirect_uri=${GOOGLE_REDIRECT_URL}`;
+  url += `&response_type=code`;
+  url += '&scope=email profile';
 
-    res.redirect(url);
+  res.redirect(url);
 });
 
 // 구글 로그인 리디렉션 처리
 router.get('/login/redirect', async (req: Request, res: Response) => {
-    const { code } = req.query;
+  const { code } = req.query;
 
-    try {
-        const tokenResponse = await axios.post('https://oauth2.googleapis.com/token', {
-            code: code as string,
-            client_id: GOOGLE_CLIENT_ID,
-            client_secret: GOOGLE_CLIENT_SECRET,
-            redirect_uri: GOOGLE_REDIRECT_URL,
-            grant_type: 'authorization_code',
-        });
+  try {
+    const tokenResponse = await axios.post(
+      'https://oauth2.googleapis.com/token',
+      {
+        code: code as string,
+        client_id: GOOGLE_CLIENT_ID,
+        client_secret: GOOGLE_CLIENT_SECRET,
+        redirect_uri: GOOGLE_REDIRECT_URL,
+        grant_type: 'authorization_code',
+      }
+    );
 
-        const tokens: any = tokenResponse.data; // 토큰 정보 가져오기
-        client.setCredentials(tokens);
+    const tokens: any = tokenResponse.data; // 토큰 정보 가져오기
+    client.setCredentials(tokens);
 
-        // 구글 사용자 정보 가져오기
-        const userInfoResponse = await axios.get('https://www.googleapis.com/oauth2/v2/userinfo', {
-            headers: {
-                Authorization: `Bearer ${tokens.access_token}`,
-            },
-        });
+    // 구글 사용자 정보 가져오기
+    const userInfoResponse = await axios.get(
+      'https://www.googleapis.com/oauth2/v2/userinfo',
+      {
+        headers: {
+          Authorization: `Bearer ${tokens.access_token}`,
+        },
+      }
+    );
 
-        const userInfo = userInfoResponse.data;
-        console.log(`User Info: ${JSON.stringify(userInfo)}`);
+    const userInfo = userInfoResponse.data;
+    console.log(`User Info: ${JSON.stringify(userInfo)}`);
 
-        res.send('로그인 성공: ' + JSON.stringify(userInfo));
-    } catch (err) {
-        console.error('Error during Google login:', err);
+    res.send('로그인 성공: ' + JSON.stringify(userInfo));
+  } catch (err) {
+    console.error('Error during Google login:', err);
 
-        res.status(500).send('로그인 중 오류가 발생했습니다.');
-    }
+    res.status(500).send('로그인 중 오류가 발생했습니다.');
+  }
 });
 
 // email
-router.get('/email-verification', (req, res) => {
-    res.sendFile(path.join(__dirname, '..', 'user', 'emailcheck.html'));
-});
+// router.get('/email-verification', (req, res) => {
+//     res.sendFile(path.join(__dirname, '..', 'user', 'emailcheck.html'));
+// });
 router.get('/api/verify', (req, res) => userController.verifyEmail(req, res));
 /**
  * @swagger

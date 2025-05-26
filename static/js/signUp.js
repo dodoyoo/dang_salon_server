@@ -1,43 +1,10 @@
 // 회원가입 기능 구현
 document.addEventListener('DOMContentLoaded', function () {
-  // 전체 동의 체크박스 처리
-  const agreeAllCheckbox = document.getElementById('agreeAll');
-  const agreeCheckboxes = document.querySelectorAll(
-    'input[name^="agree"]:not([name="agreeAll"])'
-  );
-
-  agreeAllCheckbox.addEventListener('change', function () {
-    const isChecked = this.checked;
-    agreeCheckboxes.forEach((checkbox) => {
-      checkbox.checked = isChecked;
-    });
-  });
-
-  // 개별 체크박스 변경 시 전체 동의 체크박스 상태 업데이트
-  agreeCheckboxes.forEach((checkbox) => {
-    checkbox.addEventListener('change', function () {
-      const allChecked = Array.from(agreeCheckboxes).every((cb) => cb.checked);
-      agreeAllCheckbox.checked = allChecked;
-    });
-  });
-
   // 폼 제출 처리
   const form = document.getElementById('signupForm');
   form.addEventListener('submit', async function (e) {
     e.preventDefault();
     let isValid = true;
-
-    // 아이디 검증
-    const userId = document.getElementById('userId').value;
-    const userIdRegex = /^[a-z0-9_-]{5,20}$/;
-    if (!userIdRegex.test(userId)) {
-      document.getElementById('userIdError').style.display = 'block';
-      document.getElementById('userId').classList.add('input-error');
-      isValid = false;
-    } else {
-      document.getElementById('userIdError').style.display = 'none';
-      document.getElementById('userId').classList.remove('input-error');
-    }
 
     // 비밀번호 검증
     const password = document.getElementById('password').value;
