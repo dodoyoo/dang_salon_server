@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>댕살롱 - 애견미용 예약 서비스</title>
+    <link rel="stylesheet" href="/css/signUp.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <header class="header">
+        <h1 class="logo">댕살롱 회원가입</h1>
+      </header>
+
+      <!-- Sign Up Form -->
+      <main class="signup-form-section">
+        <form
+          id="signupForm"
+          class="signup-form"
+          action="/api/sign-up"
+          method="POST"
+        >
+          <div class="form-group">
+            <label for="name">닉네임</label>
+            <input type="text" id="name" name="name" placeholder="" required />
+          </div>
+
+          <div class="form-group email-group">
+            <label for="email">이메일</label>
+            <div class="email-wrapper">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder=""
+                required
+              />
+              <button type="button" id="checkEmailBtn" class="btn btn-email">
+                이메일 확인
+              </button>
+              <p id="emailError" class="error-message" style="display: none">
+                유효하지 않은 이메일입니다.
+              </p>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="password">비밀번호</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder=""
+              required
+            />
+            <p id="passwordError" class="error-message" style="display: none">
+              비밀번호는 8~16자, 영문/숫자/특수문자를 포함해야 합니다.
+            </p>
+          </div>
+
+          <div class="form-group">
+            <label for="confirmPasswordEr">비밀번호 확인</label>
+            <input
+              type="password"
+              id="confirmPassword"
+              name="confirmPassword"
+              placeholder=""
+              required
+            />
+            <p
+              id="confirmPasswordError"
+              class="error-message"
+              style="display: none"
+            >
+              비밀번호가 일치하지 않습니다.
+            </p>
+          </div>
+
+          <div class="form-group checkbox-group">
+            <input type="checkbox" id="agree" required />
+            <label for="agree">이용약관 및 개인정보 수집에 동의합니다</label>
+          </div>
+
+          <button type="submit" class="btn btn-primary">회원가입</button>
+        </form>
+      </main>
+    </div>
+    <script src="/js/signUp.js"></script>
+  </body>
+</html>
